@@ -1,0 +1,13 @@
+<div class="wrapper" [ngStyle]="containerStyle">
+  <aside *ngFor="let message of messages">
+    <div class="toaster-container" (click)="closeToast(message)"
+         [ngClass]="[message.type,message.dismissed? 'hidden': 'visible']">
+      <div class="toaster-message-image">
+        <img src="{{message.image}}" width="30" height="30"/>
+      </div>
+      <div class="toaster-message-body">
+        <span>{{message.body}}</span>
+      </div>
+    </div>
+  </aside>
+</div>
