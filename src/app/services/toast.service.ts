@@ -8,13 +8,11 @@ export class ToastService {
   socketIsOpen = 1;
   ws: WebSocket;
   messages;
+  url: string;
 
-  constructor() {
+  constructor() {}
 
-  }
-
-  openMessagePipe() {
-    const url = 'wss://newforexdev.pandats-client.io/toast';
+  openMessagePipe(url) {
     this.ws = new WebSocket(url);
     return new Observable(
       observer => {
